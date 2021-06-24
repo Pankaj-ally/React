@@ -1,13 +1,101 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: grey; */
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Poppins', sans-serif;
 }
+
+#movie{
+  display: inline-block;
+  margin: 10px;
+}
+
+.products{
+  display: inline-block;
+  margin: 10px;
+  border: 1px black solid;
+}
+
+#title,#year,.inline{
+  text-align: center;
+  
+}
+
+.main-title{
+  background-color: grey;
+  text-align: center;
+}
+
+#navbar{
+  display: flex;
+}
+
+#searchbar{
+  width: 40%;
+  box-sizing: border-box;
+  min-width: 170px;
+  
+}
+
+.searchbardiv{
+  display: grid;
+  place-items: center;
+}
+
+
+.makeitinline{
+  display: flex;
+} 
+
+.card-para {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#product {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#right-column {
+  width: 60%;
+  margin-top: 40px;
+  padding-left: 30px;
+  box-sizing: border-box;
+}
+#left-column img {
+  width: 100%;
+  margin-top: 50px;
+}
+#left-column {
+  width: 40%;
+  box-sizing: border-box;
+}
+
+.product-preview .previewImg img {
+  margin: 5px;
+  width: 15%;
+  height: 30%;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+}
+.active{
+  border: 2px solid #009688;
+}
+
+#name,#brand,#price,.product-preview,.description{
+  font-family: 'Montserrat', sans-serif;
+}
+

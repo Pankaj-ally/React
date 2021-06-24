@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Topbar from "./components/Topbar/";
+import Footer from "./components/Footer";
+// import Navbar from "./components/Navbar";
+// import Hanger from "./components/Hanger";
+import Home from "./components/Home";
+import PLP from "./components/PLP";
+import PDP from "./components/PDP";
+import Contact from "./components/Contact"
+import About from  "./components/About"
+import Cart from "./components/Cart"
+import { BrowserRouter,Route,Switch } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Topbar />
+      <Switch>
+        <Route path="/" exact component={Home}/>
+        <Route path="/contact"  component={Contact}/>
+        <Route path="/about"  component={About}/>
+        <Route path="/cart"  component={Cart}/>
+        <Route path="/products" exact component={PLP}/>
+        <Route path ="/products/:id" component={PDP}/>
+        <Route component={()=><h1>Error 404</h1>}/>
+      </Switch>
+      {/* <Products /> */}
+      <Footer />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
