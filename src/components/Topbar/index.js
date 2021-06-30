@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-const Navbar = () => {
+
+import { connect } from "react-redux";
+import { addtoCart, getProducts } from "../../redux/actions"
+
+
+const Navbar = (props) => {
     return ( 
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container-fluid">
@@ -21,10 +26,16 @@ const Navbar = () => {
         <Link to="/contact" className="nav-link">Contact</Link>
         </li>
         <li className="nav-item">
-        <Link to="/cart" className="nav-link">Cart</Link>
+        <Link to="/cart" className="nav-link">Cart  <span className='badge badge-warning' id='lblCartCount'>{props.cart&&props.cart.length}</span></Link>
         </li>
         <li className="nav-item">
         <Link to="/products" className="nav-link">Products</Link>
+        </li>
+        <li className="nav-item">
+        <Link to="/signin" className="nav-link">Sign In</Link>
+        </li>
+        <li className="nav-item">
+        <Link to="/signup" className="nav-link">Sign Up</Link>
         </li>
         {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,7 +51,9 @@ const Navbar = () => {
         {/* <li className="nav-item">
           <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li> */}
+      
       </ul>
+      
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">Search</button>
@@ -51,8 +64,13 @@ const Navbar = () => {
 
      );
 }
- 
-export default Navbar;
+
+const mapcarttostore=(store)=>({
+    cart:store.cart
+})
+
+
+export default connect(mapcarttostore,null)(Navbar);
 
 // class TopBar extends React.Component {
 //     constructor(props) {

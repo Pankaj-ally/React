@@ -9,6 +9,8 @@ import PDP from "./components/PDP";
 import Contact from "./components/Contact"
 import About from  "./components/About"
 import Cart from "./components/Cart"
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
 import { BrowserRouter,Route,Switch } from "react-router-dom";
 
 const App = () => {
@@ -22,6 +24,8 @@ const App = () => {
         <Route path="/cart"  component={Cart}/>
         <Route path="/products" exact component={PLP}/>
         <Route path ="/products/:id" component={PDP}/>
+        <Route path="/signin" component={Signin}/>
+        <Route path="/signup" component={Signup}/>
         <Route component={()=><h1>Error 404</h1>}/>
       </Switch>
       {/* <Products /> */}
